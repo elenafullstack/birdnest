@@ -1,0 +1,22 @@
+{
+  "name": "drones_backend",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd ../drones_front/ && npm run build && cp -r build ../drones_backend"
+  },
+  "author": "Elena Rima",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3",
+    "node-fetch": "^2.6.6",
+    "xml2js": "^0.4.23",
+    "xml2json": "^0.12.0"
+  }
+}
