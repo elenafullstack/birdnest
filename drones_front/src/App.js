@@ -2,6 +2,7 @@
 import React, { useState, useEffect} from 'react'
 import droneService from './services/drones'
 import Drone from './components/Drone'
+import ClosestDrone from './components/closestDrone'
 
 
 const App = () => {
@@ -16,19 +17,25 @@ const App = () => {
     }, [])
 
 
+    function sortBy(field) {
+      return function(a, b) {
+        return (a[field] > b[field]) - (a[field] < b[field])
+      };
+    }
 
+    const filteredDrones = drones.sort(sortBy('distance'));
 
   return (
   <div>
- 
-
-    {console.log(drones)}
-
-    <h2>Pilot information</h2>
+    
+   <ClosestDrone drones={filteredDrones}/>
+  
+    
+    <h2>All pilots in the NDZ zone information</h2>
 
     <table>
         <tr>
-          <th>Pilot Name</th>
+          <th>Pilot name</th>
           <th>Email</th>
           <th>Phone number</th>
           <th>Closest distance</th>
@@ -37,11 +44,6 @@ const App = () => {
         {drones.map(x=> <Drone key= {x.serialNumber} drone = {x}/>)}
    
       </table>
-
-  
-
-  
-   
   </div>
   
  

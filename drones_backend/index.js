@@ -7,7 +7,7 @@ const cors= require('cors');
 const fetch=require("node-fetch");
 var parser = require('xml2json');
 const { response } = require('express');
-const dronesRouter = require('./controllers/drones')
+
 
 app.use(cors());
 app.use(express.static('build'))
