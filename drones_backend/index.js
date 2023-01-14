@@ -73,7 +73,7 @@ function checkZone(x, y) {
               
                 const distance= checkZone(body.positionX,body.positionY) / 1000;
                 const roundedDistance = Math.round(distance * 100) / 100
-                const drone = new Drone(body.serialNumber, roundedDistance, new Date().toLocaleString(), pilotObject)
+                const drone = new Drone(body.serialNumber, roundedDistance, new Date(), pilotObject)
  
 
                 //find out if the drone is already in the list of past 10minutes, if so compare if the previous distance of drones was closer
@@ -94,9 +94,9 @@ function checkZone(x, y) {
               }
 
             const tenMinutes = new Date(new Date() - (60000))
-            const tenMinutes2 = tenMinutes.toLocaleString()
+    
             //delete all the drones that are older than 10 minutes
-            existingDrones = existingDrones.filter(drone=>drone.time > tenMinutes2)
+            existingDrones = existingDrones.filter(drone=>drone.time > tenMinutes)
             //update the dronelist
             drones = existingDrones ; 
             console.log(drones);
