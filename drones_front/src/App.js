@@ -3,10 +3,15 @@ import React, { useState, useEffect} from 'react'
 import droneService from './services/drones'
 import Drone from './components/Drone'
 import ClosestDrone from './components/closestDrone'
+import Container from 'react-bootstrap/Container';
+
+ 
+
 
 
 const App = () => {
   const [drones, setDrones] = useState([])
+
 
   
   useEffect(() => {
@@ -23,29 +28,49 @@ const App = () => {
       };
     }
 
-    const filteredDrones = drones.sort(sortBy('distance'));
+   /* const filteredDrones = drones;*/
+
+
 
   return (
-  <div>
-    
-   <ClosestDrone drones={filteredDrones}/>
-  
-    
-    <h2>All pilots in the NDZ zone information</h2>
 
-    <table>
-        <tr>
-          <th>Pilot name</th>
-          <th>Email</th>
-          <th>Phone number</th>
-          <th>Closest distance</th>
-          <th>Last seen</th>
-        </tr>
-        {drones.map(x=> <Drone key= {x.serialNumber} drone = {x}/>)}
-   
-      </table>
-  </div>
-  
+  <div class="container-fluid">
+    <div class="container">
+    <h1 class="page-header text-primary text-center mb-1 py-4 border-bottom display-4">Birdnest</h1>
+    <p class="py-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus enim fugiat recusandae dicta blanditiis, modi nisi atque sit magnam vitae voluptatem ipsum iusto praesentium neque placeat voluptas earum. Laboriosam, at?
+      Iure voluptatem nostrum, veniam quisquam magnam voluptates praesentium similique cumque quaerat odit ullam cum quia consectetur reprehenderit quidem distinctio sapiente reiciendis vel dignissimos inventore quasi eius incidunt. Quis, quod maxime!
+      Temporibus, aspernatur? Perferendis a illo, earum deleniti quae natus perspiciatis molestias mollitia iste nam, nesciunt esse ex accusamus veniam quas eaque obcaecati. Alias laborum sed et autem, quidem eaque corrupti.</p>
+
+      <div class="mb-5 text-center">
+        <ClosestDrone drones={[...drones].sort(sortBy('distance'))}/>
+      </div>
+
+      <h1 class="text-center">All pilots in the NDZ zone information</h1>
+
+        <div class="table-responsive">
+
+
+          <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                  <th class="p-3">Pilot name</th>
+                  <th class="p-3">Email</th>
+                  <th class="p-3">Phone number</th>
+                  <th class="p-3">Closest distance</th>
+                  <th class="p-3">Last seen</th>
+                </tr>
+              </thead>
+              <tbody class="">
+                {drones.map(x=> <Drone key= {x.serialNumber} drone = {x}/>)}
+              </tbody>
+            
+          </table>
+
+
+        </div>
+    
+      </div>
+    </div>
  
   )
   }
