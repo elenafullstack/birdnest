@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.442bc256.css","mappings":"AAAA,OACG,aAEH,CAEA,eAHG,oBAMH,CAHA,QAEI,aACJ","sources":["App.css"],"sourcesContent":["a:link {\n   color: #3485ff;\n   text-decoration: none;\n}\n\na:hover {\n    text-decoration: none;\n    color:#34e7ff;\n}"],"names":[],"sourceRoot":""}

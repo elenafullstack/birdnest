@@ -3,6 +3,7 @@ import React, { useState, useEffect} from 'react'
 import droneService from './services/drones'
 import Drone from './components/Drone'
 import ClosestDrone from './components/closestDrone'
+import './App.css';
 
 
 const App = () => {
@@ -48,7 +49,7 @@ const App = () => {
           <h1 class="page-header text-primary text-center display-4">Birdnest</h1>
         </div>
         
-        <p class="py-4 text-center">This application is the pre-assignment for the Reaktor summer trainee-program. The application lists all the pilots that have been flying their drone in the no drone zone (NDZ) during the last 10 minutes. If
+        <p class="py-4 text-center">This application is an assignment for a developer trainee position. The instructions of the assignment can be found <a href="https://assignments.reaktor.com/birdnest">here</a>.The application lists all the pilots that have been flying their drone in the no drone zone (NDZ) during the last 10 minutes. If
         the pilot information of the drone was not found, it is not shown. The pilots are sorted so, that the pilots that were last seen on the zone are shown first. The closest distance of the pilot is measured since the moment the pilot was first detected.
         The pilot information is obtained 10 minutes since the moment the pilot was last detected on the zone. The closest distance confirmed to the nest is the closest distance that has been detected during the time the application has been running.</p>
 
